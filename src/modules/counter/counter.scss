@@ -1,0 +1,136 @@
+.counter {
+  $this: &;
+  margin: 81px 0 70px;
+  @include mobile() {
+    margin: 48px 0 55px;
+  }
+
+  &__items {
+    display: flex;
+    align-items: flex-start;
+    @include mobile() {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    flex: 1;
+    @include mobile() {
+      width: 100%;
+      margin-bottom: 23px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__number {
+    text-align: center;
+    color: #e9eff4;
+    font-size: 150px;
+    line-height: 1;
+    font-weight: bold;
+    @include mobile() {
+      font-size: 100px;
+    }
+  }
+
+  &__text {
+    margin-top: -59px;
+    padding-top: 24px;
+    position: relative;
+    background: $white;
+    text-align: center;
+    @include mobile() {
+      margin-top: -40px;
+      padding-top: 17px;
+    }
+
+    b {
+      color: $red;
+    }
+  }
+
+  &__banner {
+    margin-top: 90px;
+    position: relative;
+    background: $gray;
+    height: 155px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      width: 260px;
+      height: 260px;
+      background: #e9eff4;
+      border-radius: 50%;
+      position: absolute;
+      right: -49px;
+      top: -24px;
+      @include mobile() {
+        width: 160px;
+        height: 160px;
+        right: -59px;
+        top: auto;
+        bottom: -62px;
+      }
+    }
+
+    @include mobile() {
+      margin-top: 50px;
+      padding: 25px 0 115px;
+      height: auto;
+    }
+  }
+
+  &__banner-content {
+    width: 100%;
+    max-width: 1040px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+  }
+
+  &__banner-text {
+    position: relative;
+    max-width: 765px;
+    font-size: 28px;
+    line-height: 36px;
+    text-align: center;
+    z-index: 1;
+
+    span {
+      font-weight: bold;
+      color: $cyan;
+    }
+
+    @include mobile() {
+      font-size: 18px;
+      line-height: 26px;
+      max-width: 220px;
+    }
+  }
+
+  &__banner-img {
+    position: absolute;
+    left: 100%;
+    margin-left: -48px;
+    top: -13px;
+    z-index: 1;
+    @include mobile() {
+      width: 280px;
+      height: auto;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 10px;
+      margin-left: 0;
+      top: 100%;
+    }
+  }
+}

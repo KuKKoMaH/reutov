@@ -1,21 +1,33 @@
 .testimonials
   .c
-    .testimonials__title Истории клиентов и их домов:
+    .testimonials__subtitle Или почитайте,
+    .testimonials__title что говорят обо мне пациенты
+    .testimonials__slider
+      .testimonials__slides
+        .testimonials__slide
+          .testimonials__card
+            .testimonials__head
+              img.testimonials__logo(src=require('src/modules/testimonials/img/img_01.png'))
+              .testimonials__date 1 сентября 2021
+            .testimonials__text Пост благодарности! Выражаю особую благодарность Реутову Андрею Александровичу за золотые руки, профессионализм, отзывчивость и ещё много-много слов благодарности. 15 августа 2022 была проведена операция по удалению вестибулярной шванномы, 25 августа 2022 уже дома и пишу пост. Медицина шагнула далеко вперёд и чем раньше выявлено заболевание, тем лучше! Будьте решительны и здоровы! Спасибо большое Реутову Андрею Александровичу и всему отделению нейрохирургии ЦКБ управления делами президента.
+            a.testimonials__button(href='#' target="_blank") Читать отзывы на сайте ПроДокторов
 
-    .testimonials__content
-      .testimonials__slider
-        .testimonials__slides
-          each i in [1,2,3,4,5]
-            .testimonials__slide
-              .testimonials__card
-                .testimonials__avatar: img(src=require('src/modules/testimonials/img/avatar.jpg'))
-                .testimonials__name
-                  | Петров Николай#{' '}
-                  =i
-                .testimonials__text Повседневная практика показывает, что рамки и место обучения кадров в значительной степени обуславливает создание новых предложений. Таким образом новая модель организационной деятельности влечет за собой .
-                .testimonials__gallery
-                  each i in [1,2,3]
-                    button.testimonials__img: img(src=require('src/modules/testimonials/img/img_0' + i + '.jpg'))
+        .testimonials__slide
+          .testimonials__card
+            .testimonials__head
+              img.testimonials__logo(src=require('src/modules/testimonials/img/img_01.png'))
+              .testimonials__date 1 сентября 2021
+            .testimonials__text Обратилась к Андрею Александровичуиз-за дисфункции ВПШ и сирингомиелии. Нарастала неврологическая симптоматика, начались боли в спине. По итогу врач поставил шунт, в связи с этим сирингомиелия почти исчезла. Проведённым лечением очень довольна. Персонал ЦКБ замечательный, сама больница светлая, красивая. Такое ощущение, что находишься не в больнице, а на курорте.
+            a.testimonials__button(href='#' target="_blank") Читать отзывы на сайте ПроДокторов
 
-      .testimonials__nav.testimonials__nav--prev: +the_svg('arrow-right')
-      .testimonials__nav.testimonials__nav--next: +the_svg('arrow-right')
+        .testimonials__slide
+          .testimonials__card
+            .testimonials__head
+              img.testimonials__logo(src=require('src/modules/testimonials/img/img_01.png'))
+              .testimonials__date 1 сентября 2021
+            .testimonials__text Была проблема с головными болями при нагрузках. Дошло до того, что начались головные боли по ночам, головокружение. Подсказали обратиться к Андрею Александровичу. Сбросил ему снимки МРТ, после изучения назначил дату операции. Прошло 2 месяца после операции, чувствую себя хорошо, головные боли прошли. Стал спать нормально по ночам. Ещё раз спасибо!
+            a.testimonials__button(href='#' target="_blank") Читать отзывы на сайте ПроДокторов
+
+    .testimonials__footer
+      .testimonials__nav.testimonials__nav--prev: +the_svg('chevron')
+      .testimonials__nav.testimonials__nav--next: +the_svg('chevron')

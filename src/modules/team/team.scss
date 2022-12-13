@@ -1,0 +1,194 @@
+.team {
+  $this: &;
+
+  margin: 70px 0 70px;
+  @include mobile() {
+    margin: 56px 0 50px;
+  }
+
+  &__title {
+    font-size: 44px;
+    line-height: 1.15;
+    font-weight: bold;
+    color: $blue;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 38px;
+    @include mobile() {
+      font-size: 24px;
+      margin-bottom: 26px;
+    }
+
+    b {
+      color: $cyan;
+    }
+  }
+
+  &__slider {
+    overflow: hidden;
+    position: relative;
+    margin: 0 -10px;
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 33.3333%;
+      pointer-events: none;
+      z-index: 1;
+      @include mobile() {
+        display: none;
+      }
+    }
+
+    &:before {
+      left: 0;
+      background-image: linear-gradient(90deg, rgba(#fff, 1), rgba(#fff, 0));
+    }
+
+    &:after {
+      right: 0;
+      background-image: linear-gradient(90deg, rgba(#fff, 0), rgba(#fff, 1));
+    }
+  }
+
+  &__slides {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__slide {
+    width: 50%;
+    flex-shrink: 0;
+    padding: 50px 10px 0;
+    filter: blur(4px);
+
+    &.swiper-slide-active {
+      filter: none;
+    }
+
+    @include mobile() {
+      width: 100%;
+    }
+  }
+
+  &__card {
+    background: #f4f7fa;
+    border-radius: 15px;
+    padding: 35px 40px 50px;
+    position: relative;
+    text-align: center;
+    @include mobile() {
+      padding: 33px 26px 30px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    img {
+      display: block;
+      border-radius: 15px;
+    }
+  }
+
+  &__name {
+    font-weight: bold;
+    margin-bottom: -2px;
+
+    span {
+      color: $cyan;
+    }
+  }
+
+  &__position {
+    font-size: 14px;
+    font-weight: 300;
+    color: #636363;
+  }
+
+  &__list {
+    margin: 25px 0;
+    font-weight: 300;
+    text-align: left;
+    @include mobile() {
+      margin: 20px 0;
+    }
+
+    div {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    svg {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: 0;
+      left: 0;
+      color: $cyan;
+    }
+  }
+
+  &__button {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    color: $blue;
+    letter-spacing: 0.22em;
+    text-decoration: underline;
+    @include mobile() {
+      font-size: 10px;
+    }
+  }
+
+  &__footer {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mobile() {
+      margin-top: 14px;
+    }
+  }
+
+  &__nav {
+    margin: 0 5px;
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    background: $cyan;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mobile() {
+      width: 56px;
+      height: 56px;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    &--prev {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    &--next {
+
+    }
+  }
+}

@@ -16,141 +16,9 @@
   }
 }
 
-@mixin media($condition) {
-  @if ($condition == 'lg') {
-    @media screen and (max-width: $breakpoint-lg - 1) {
-      @content;
-    }
-  }
-  @if ($condition == 'md') {
-    @media screen and (max-width: $breakpoint-md - 1) {
-      @content;
-    }
-  }
-}
-
 @mixin mobile() {
-  @include media('md') {
+  @media screen and (max-width: $breakpoint-lg) {
     @content;
-  }
-}
-
-@mixin skew($position, $skew, $angle, $border-width: 0px) {
-  @include skewTransform($position, $skew, $angle) {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0 - $border-width;
-    left: 0 - $border-width;
-    right: 0 - $border-width;
-    bottom: 0 - $border-width;
-    @content;
-  }
-}
-
-@mixin skewTransform($position, $skew, $angle) {
-  &:after {
-    @content;
-    @if ($position == 'right') {
-      @if ($skew == 'bottom') {
-        transform-origin: 0 0;
-        transform: skew($angle);
-      }
-      @if ($skew == 'top') {
-        transform-origin: 0 100%;
-        transform: skew(-$angle);
-      }
-    }
-    @if ($position == 'left') {
-      @if ($skew == 'bottom') {
-        transform-origin: 100% 0;
-        transform: skew(-$angle);
-      }
-      @if ($skew == 'top') {
-        transform-origin: 100% 100%;
-        transform: skew($angle);
-      }
-    }
-    @if ($position == 'top') {
-      @if ($skew == 'left') {
-        transform-origin: 100% 100%;
-        transform: skew(0, $angle);
-      }
-      @if ($skew == 'right') {
-        transform-origin: 0 100%;
-        transform: skew(0, -$angle);
-      }
-    }
-    @if ($position == 'bottom') {
-      @if ($skew == 'left') {
-        transform-origin: 100% 0;
-        transform: skew(0, -$angle);
-      }
-      @if ($skew == 'right') {
-        transform-origin: 0 0;
-        transform: skew(0, $angle);
-      }
-    }
-  }
-}
-
-@mixin skewClipPath($position, $skew, $size) {
-  @if ($position == 'right') {
-    @if ($skew == 'bottom') {
-      clip-path: polygon(0 0, calc(100% - #{$size}) 0, 100% 100%, 0% 100%);
-    }
-    @if ($skew == 'top') {
-      clip-path: polygon(0 0, 100% 0, calc(100% - #{$size}) 100%, 0% 100%);
-    }
-  }
-  @if ($position == 'left') {
-    @if ($skew == 'bottom') {
-      clip-path: polygon(#{$size} 0, 100% 0, 100% 100%, 0% 100%);
-    }
-    @if ($skew == 'top') {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, #{$size} 100%);
-    }
-  }
-  @if ($position == 'top') {
-    @if ($skew == 'left') {
-      clip-path: polygon(0 0, 100% #{$size}, 100% 100%, 0 100%);
-    }
-    @if ($skew == 'right') {
-      clip-path: polygon(0 #{$size}, 100% 0, 100% 100%, 0 100%);
-    }
-  }
-  @if ($position == 'bottom') {
-    @if ($skew == 'left') {
-      clip-path: polygon(0 0, 100% 0, 100% calc(100% - #{$size}), 0 100%);
-    }
-    @if ($skew == 'right') {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - #{#{$size}}));
-    }
-  }
-}
-
-@mixin skewBorder($position, $skew, $size, $borderColor, $backgroundColor) {
-  &:before, &:after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    @include skewClipPath($position, $skew, $size);
-  }
-
-  &:before {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: $borderColor;
-  }
-
-  &:after {
-    top: 1px;
-    right: 1px;
-    bottom: 1px;
-    left: 1px;
-    background: $backgroundColor;
   }
 }
 
@@ -167,14 +35,6 @@
   &:-moz-placeholder {
     color: $color;
   }
-}
-
-@mixin demi() {
-  font-family: 'Futura New Demi', sans-serif;
-}
-
-@mixin book() {
-  font-family: 'Futura New Book', sans-serif;
 }
 
 @mixin hidden() {
@@ -202,19 +62,11 @@
   letter-spacing: -.025em;
 }
 
-@mixin green-shadow() {
-  box-shadow: 0px 11px 31.92px 6.08px rgba(62, 145, 0, 0.24);
+@mixin max-lines($number) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $number;
+  -webkit-box-orient: vertical;
 }
 
-@mixin green-shadow-filter() {
-  filter: drop-shadow(0px 11px 31.92px rgba(62, 145, 0, 0.24));
-}
-
-@mixin link() {
-  border-bottom: 1px dotted $green-dark;
-  @include anim();
-  &:hover {
-    color: $green-dark;
-    text-decoration: none;
-  }
-}

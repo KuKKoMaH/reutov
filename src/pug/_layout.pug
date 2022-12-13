@@ -4,7 +4,7 @@ block html
 doctype html
 html(lang="ru-RU")
   head
-    title Ваш дом
+    title Андрей Реутов
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(http-equiv="content-type" content="text/html; charset=utf-8")
     meta#viewport(name="viewport" content="width=device-width, user-scalable=no")
@@ -13,15 +13,17 @@ html(lang="ru-RU")
     //link(rel="shortcut icon" href="/favicon.ico")
 
   body(onunload="")
-    include ../modules/header/header
-    block body
-    include ../modules/footer/footer
+    .page
+      include ../modules/header/header
+      block body
+      include ../modules/footer/footer
 
     //include ../modules/photoswipe/photoswipe
     include ../modules/popup/popup-callback
-    include ../modules/popup/popup-discount
     include ../modules/popup/popup-iframe
-    //include ../modules/popup/popup-order
+    include ../modules/popup/popup-thank
+    include ../modules/popup/popup-example
+    include ../modules/popup/popup-team
     //include ../modules/popup/popup-politic
     .hidden
 

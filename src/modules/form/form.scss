@@ -1,70 +1,55 @@
 .form {
   $this: &;
 
-  &__title {
-    @include h3();
+  max-width: 360px;
+  width: 100%;
+  margin: 0 auto;
+
+  &__header {
     text-align: center;
-    margin-bottom: 60px;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
     @include mobile() {
-      font-size: 24px;
-      font-weight: 500;
-      margin-bottom: 30px;
+      font-size: 16px;
+      margin-bottom: 2px;
     }
   }
 
-  &__content {
-    > *:first-child {
-      margin-top: 0;
+  &__subheader {
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 42px;
+    @include mobile() {
+      font-size: 12px;
+      margin-bottom: 24px;
     }
   }
 
   &__input {
-    margin-top: 60px;
+    margin-bottom: 10px;
     @include mobile() {
-      margin-top: 40px;
-    }
-  }
-
-  &__confirm {
-    margin-top: 40px;
-    @include mobile() {
-      margin-top: 30px;
+      margin-bottom: 5px;
     }
   }
 
   &__button {
-    margin-top: 60px;
-    @include mobile() {
-      margin-top: 40px;
-      .btn {
-        width: 100%;
-      }
-    }
-  }
-
-  &__checkbox {
     margin-top: 30px;
-    @include mobile() {
-      margin-top: 20px;
-    }
-  }
 
-  &__cols {
-    display: flex;
-    margin: 0 -40px;
-    @include mobile() {
-      margin: 0;
-      flex-direction: column;
-      display: contents;
-    }
-  }
-
-  &__col {
-    width: 280px;
-    margin: 0 40px;
-    @include mobile() {
+    .btn {
       width: 100%;
-      margin: 0 0 20px;
+    }
+  }
+
+  &__note {
+    margin-top: 19px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #636363;
+    text-align: center;
+    @include mobile() {
+      font-size: 10px;
+      margin-top: 10px;
     }
   }
 }

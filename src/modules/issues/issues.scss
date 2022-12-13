@@ -1,0 +1,148 @@
+$semi-desktop-breakpoint: 1260px;
+
+.issues {
+  $this: &;
+  margin: 45px 0 70px;
+  @include mobile() {
+    margin: 45px 0 40px;
+  }
+
+  &__title {
+    font-size: 44px;
+    font-weight: bold;
+    line-height: 1.15;
+    color: $blue;
+    margin: 0 auto 3px;
+    max-width: 640px;
+    text-align: center;
+    @include mobile() {
+      font-size: 24px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    line-height: 1.8;
+    font-weight: 300;
+    margin: 0 auto 39px;
+    max-width: 700px;
+    text-align: center;
+    @include mobile() {
+      line-height: 1.15;
+      font-size: 16px;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+    @include mobile() {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  &__item {
+    padding: 10px;
+    width: 25%;
+    @include media-max-width($semi-desktop-breakpoint) {
+      width: 33.3333%;
+    }
+    @include mobile() {
+      width: 100%;
+      padding: 0;
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__card {
+    background: #f4f7fa;
+    border-radius: 15px;
+    padding: 34px 41px 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    @include mobile() {
+      padding: 27px 31px 29px;
+    }
+  }
+
+  &__header {
+    font-size: 18px;
+    font-weight: 300;
+    color: $blue;
+    margin-bottom: 25px;
+    @include mobile() {
+      font-size: 14px;
+      margin-bottom: 17px;
+    }
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 15px;
+    @include mobile() {
+      font-size: 12px;
+    }
+  }
+
+  &__check {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 10px;
+    @include mobile() {
+      margin-bottom: 10px;
+    }
+
+    span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $white;
+      border-radius: 6px;
+
+      svg {
+        width: 13px;
+        height: 13px;
+        color: $cyan;
+      }
+    }
+
+    &--cross {
+      span {
+        svg {
+          color: $red;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: auto;
+    padding-top: 25px;
+    @include mobile() {
+      padding-top: 13px;
+    }
+
+    .btn {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__red {
+    color: $red;
+  }
+}

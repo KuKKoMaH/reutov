@@ -1,0 +1,26 @@
+.team
+  .c
+    .team__title Во время операции мне помогает команда #[b лучших] врачей ЦКБ
+    .team__slider
+      .team__slides
+        each i in [1,2,3]
+          .team__slide
+            .team__card
+              .team__img: img(src=require('src/modules/team/img/img.jpg') width=70 height=70)
+              .team__name #[span Фамилия] Имя Отчество #{i}
+              .team__position должность врача
+              .team__list
+                div
+                  +the_svg('chevron')
+                  |Не следует, однако забывать, что укрепление и развитие структуры позволяет оценить значение существенных.
+                div
+                  +the_svg('chevron')
+                  |Повседневная практика показывает, что рамки и место обучения кадров влечет за собой процесс внедрения.
+                div
+                  +the_svg('chevron')
+                  |С другой стороны реализация намеченных плановых заданий.
+              button.team__button(onclick="openTeamInfo('team-popup')") Читать отзывы о враче
+
+    .team__footer
+      .team__nav.team__nav--prev: +the_svg('chevron')
+      .team__nav.team__nav--next: +the_svg('chevron')

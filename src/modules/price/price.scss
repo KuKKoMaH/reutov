@@ -1,0 +1,154 @@
+.price {
+  $this: &;
+
+  margin: 70px 0 70px;
+  @include mobile() {
+    margin: 56px 0 50px;
+  }
+
+  &__title {
+    font-size: 44px;
+    line-height: 1.15;
+    font-weight: bold;
+    color: $blue;
+    text-align: center;
+    max-width: 670px;
+    margin: 0 auto 3px;
+    @include mobile() {
+      font-size: 24px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 39px;
+    text-align: center;
+    @include mobile() {
+      font-size: 16px;
+      margin: 0 auto 27px;
+      max-width: 230px;
+      line-height: 1.5;
+    }
+  }
+
+
+  &__items {
+    display: flex;
+    margin: 0 -10px;
+    @include mobile() {
+      //margin: 0;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    width: 25%;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    @include mobile() {
+      width: 50%;
+      margin-bottom: 10px;
+
+      &--wide {
+        width: 100%;
+      }
+    }
+  }
+
+  &__icon {
+    margin: 0 auto 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: $green;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    @include mobile() {
+      margin-bottom: 13px;
+    }
+
+    svg {
+      width: 14px;
+      height: 10px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: -6px;
+      right: -6px;
+      bottom: -6px;
+      border-radius: 50%;
+      background: #ecf7ed;
+      z-index: -1;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-weight: 300;
+    line-height: 1.35;
+    margin-bottom: 16px;
+  }
+
+  &__img {
+    display: block;
+    margin: auto auto 0;
+
+  }
+
+  &__block {
+    background: #f4f7fa;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    padding: 37px 40px 30px;
+    @include mobile() {
+      padding: 26px 35px 25px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 167px;
+      height: 167px;
+      background: #e9eff4;
+      border-radius: 50%;
+      right: -62px;
+      bottom: -70px;
+      @include mobile() {
+        right: -79px;
+        bottom: -130px;
+      }
+    }
+  }
+
+  &__block-text {
+    position: relative;
+    text-align: center;
+
+    b {
+      color: $blue;
+    }
+  }
+
+  &__button {
+    margin-top: 50px;
+    text-align: center;
+    @include mobile() {
+      margin-top: 19px;
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}

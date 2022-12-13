@@ -1,66 +1,99 @@
+mixin bullets()
+  .header__bullets
+    .header__bullet
+      .header__bullet-icon: img(src=require('src/modules/header/img/icon_01.png') width=56 height=56)
+      .header__bullet-text Передовые малоинвазивные методы
+    .header__bullet
+      .header__bullet-icon: img(src=require('src/modules/header/img/icon_02.png') width=56 height=63)
+      .header__bullet-text Срочные операции в день обращения
+    .header__bullet
+      .header__bullet-icon: img(src=require('src/modules/header/img/icon_03.png') width=56 height=55)
+      .header__bullet-text Оперирую пациентов от 18 до 100 лет
+
+
 header.header
   .c
     .header__top
-      .header__logo: img(src=require('src/img/logo.png'))
-      .header__links
-        a(href='#') Производство по вашим размерам
-        a(href='#') Способы оплаты
-      .header__info
-        .header__location
-          +the_svg('geo')(class='header__locationIcon')
-          .header__locationLabel 3 магазина
-          .header__locationValue пн-вс с 8.00 до 19.00
-        .header__contact
-          +the_svg('phone')(class='header__contactIcon')
-          a.header__contactValue(href='tel:88412210567') 8 (8412) 21-05-67
-          button.header__contactButton
-            | заказать звонок
-            +the_svg('chevrone-down')
+      .header__top-left
+        .header__name Андрей Реутов
+        .header__position Нейрохирург в ЦКБ Управления делами президента РФ
+      .header__top-right
+        button.header__button(data-micromodal-trigger="callback-popup") получить консультацию
+        a.header__link(href='#') INSTAGRAM
+        a.header__link(href='#') FACEBOOK
+    .header__main
+      .header__left
+        .header__slider
+          .header__slides
+            .header__slide
+              .header__title Хирургическое лечение опухолей
+              .header__subtitle головного и спинного мозга
+              +bullets()
 
-      button.header__menuButton
-        +the_svg('hamburger').active
-        +the_svg('close').inactive
+            .header__slide
+              .header__title Хирургическое лечение
+              .header__subtitle мальформации Киари
+              .header__license
+                .header__license-text Моим запатентованным методом,#[br]признанном во всем мире
+                .header__license-img: img(src=require('src/modules/header/img/license.jpg') width=95 height=84)
+              +bullets()
 
-      .header__cartContainer
-        a.header__cart.header__cart--top(href='#')
-          +the_svg('cart')(class='header__cartIcon')
-          .header__cartLabel Корзина
-          .header__cartValue 2 560 руб.
-          .header__cartCounter 2
-        .header__cartPopup
-          include ../cartPopup/cartPopup
+            .header__slide
+              .header__title Хирургическое лечение
+              .header__subtitle гидроцефалии(водянки)
+              .header__list
+                .header__list-item
+                  +the_svg('chevron').header__list-bullet
+                  | Установка программируемого шунта
+                  +the_svg('info').header__list-info.tooltip(data-tippy-content="hello")
+                .header__list-item
+                  +the_svg('chevron').header__list-bullet
+                  | или эндоскопическая вентрикулостомия
+                  +the_svg('info').header__list-info.tooltip
+              +bullets()
 
-    .header__bottom
-      button.header__catalogButton
-        .header__catalogButtonIcon
-          +the_svg('hamburger').active
-          +the_svg('close').inactive
-        .header__catalogButtonText Каталог
+            .header__slide
+              .header__title Хирургическое лечение
+              .header__subtitle невралгии тройничного нерва
+              +bullets()
 
-      a.header__cart.header__cart--bottom(href='#')
-        +the_svg('cart')(class='header__cartIcon')
-        .header__cartCounter 2
+            .header__slide
+              .header__title Хирургическое лечение
+              .header__subtitle эпилепсии
+              +bullets()
 
+            .header__slide
+              .header__title Восстановительные операции
+              .header__subtitle после черепно-мозговой травмы
+              .header__bullets
+                .header__bullet
+                  .header__bullet-icon: img(src=require('src/modules/header/img/icon_04.png') width=56 height=55)
+                  .header__bullet-text Имплант, повторяющий#[br]форму черепа до травмы
+                .header__bullet
+                  .header__bullet-icon: img(src=require('src/modules/header/img/icon_05.png') width=56 height=62)
+                  .header__bullet-text Защищенность мозга и#[br]возвращение эстетики внешности
 
-      .header__main
-        .header__search
-          include ../search/search
+        .header__navigation
+          .header__nav.header__nav--prev: +the_svg('chevron')
+          .header__nav.header__nav--next: +the_svg('chevron')
 
-        .header__menu
-          ul
-            li: a(href='#') Производство
-            li: a(href='#') Услуги
-            li: a(href='#') Рекомендации эксперта
-            li: a(href='#') Дилерам и строителям
-            li: a(href='#') VIP материалы
-          .header__locationBottom
-            +the_svg('geo')(class='header__locationBottomIcon')
-            .header__locationBottomLabel 3 магазина
-            .header__locationBottomValue пн-вс с 8.00 до 19.00
+        .header__footer
+          button.btn(data-micromodal-trigger="callback-popup") Записаться на встречу с врачом
+          ul.header__note
+            li #[span очно] в Москве
+            li #[span онлайн] из любого города и страны
+        .header__pagination
 
-      button.header__searchButton
-        +the_svg('search').active
-        +the_svg('close').inactive
-
-      .header__catalog
-        include ../menu/menu
+      .header__right
+        img.header__photo(src=require('src/modules/header/img/photo.jpg') width=597 height=800)
+        .header__label
+          +the_svg('quote')
+          span #[b Лично]#[br]веду пациентов#[br]от консультации#[br]до операции
+        .header__info
+          .header__info-name
+            span Реутов
+            |#{' '}
+            span Андрей
+            |#{' '}
+            span Александрович
+          .header__info-position нейрохирург высшей#[br]категории, к.м.н., опыт#[br]более 19 лет

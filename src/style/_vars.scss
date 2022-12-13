@@ -2,33 +2,19 @@
 // colors
 // ====================================
 
-$black: #161616;
+$black: #2b2a29;
 $white: #fff;
-$gray-light: #f5f5f5;
-$gray: #e5e5e5;
-$gray-dark: #808080;
-$red: #e70208;
-$yellow: #fbe025;
-$green: #9cd615;
-$green-dark: #3e9100;
-
-$footer-border: #e5e5e5;
-$footer-bottom: #ededed;
-$green-border: #60a72b;
+$gray: #f4f7fa;
+$blue: #23527c;
+$cyan: #00bfff;
+$green: #5dbe53;
+$red: #ea3434;
 
 // ====================================
 // grid settings
 // ====================================
-$gutter: 15px;
+$gutter: 10px;
 $gutter-half: ($gutter / 2);
 
-//$breakpoint-sm: 468px
-//$breakpoint-lg: 798px;
-$breakpoint-md: 1070px;
-
-//$container-sm: 468px
-//$container-md: 768px;
-$container-lg: 1330px;
-
-
-$header_height: 60px;
+//$breakpoint-md: 1023px;
+$breakpoint-lg: 1023px;

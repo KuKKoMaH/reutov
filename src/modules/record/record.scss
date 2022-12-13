@@ -1,0 +1,113 @@
+.record {
+  $this: &;
+
+  margin: 70px 0 70px;
+  @include mobile() {
+    margin: 50px 0 50px;
+  }
+
+  &__container {
+    display: flex;
+    @include mobile() {
+      flex-direction: column;
+    }
+  }
+
+  &__main {
+    padding-top: 87px;
+    padding-right: 10px;
+    @include mobile() {
+      padding: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__aside {
+    max-width: 460px;
+    min-width: 360px;
+    background: #f4f7fa;
+    border-radius: 15px;
+    padding: 40px 10px;
+    margin-left: auto;
+    flex: 1;
+    @include mobile() {
+      margin: 0 auto;
+      max-width: 100%;
+      min-width: 0;
+      padding: 24px 30px;
+    }
+  }
+
+  &__title {
+    font-size: 44px;
+    line-height: 1.15;
+    font-weight: bold;
+    color: $blue;
+    margin-bottom: 1px;
+    @include mobile() {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 3px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    line-height: 1.9;
+    font-weight: 300;
+    margin-bottom: 52px;
+    @include mobile() {
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+  }
+
+  &__label {
+    font-weight: bold;
+    margin-bottom: 2px;
+    @include mobile() {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+    @include mobile() {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-right: 45px;
+    @include mobile() {
+      margin: 0;
+      width: 100%;
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__img {
+    margin-right: 5px;
+    @include mobile() {
+      img {
+        max-width: 50px;
+      }
+    }
+  }
+
+  &__text {
+    font-weight: 300;
+    line-height: 1.3;
+  }
+
+
+}

@@ -1,0 +1,16 @@
+.system
+  .c
+    .system__container
+      .system__info
+        .system__text #[b Мой отец тоже опытный нейрохирург.] Вместе #[span мы создали систему] дистанционного обучения для хирургов.
+
+      .system__img.system__img--01: img(src=require('src/modules/system/img/img_01.png'))
+      .system__img.system__img--02: img(src=require('src/modules/system/img/img_02.png'))
+
+      .system__content
+        .system__text Мы хотим, #[b чтобы хороших врачей] #[span стало больше] и даем доступ к бучению #[b совершенно бесплатно].
+        .system__footer
+          .system__note
+            +the_svg('info-outline').system__note-icon
+            | От качества медицинской помощи зависят жизни людей.
+          a(href='#' target="_blank").btn.system__btn Получить доступ

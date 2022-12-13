@@ -1,0 +1,33 @@
+.operations
+  .c
+    .operations__title Как мы сохраняем
+    .operations__subtitle речевые функции и профессиональные навыки пациентов при операциях на мозге
+    .operations__items
+      .operations__item
+        img.operations__img(src=require('src/modules/operations/img/img_01.jpg') width=700 height=275)
+        .operations__header Операция с пробуждением
+        .operations__text Нейролингвист будит вас во время операции и проводит тесты:
+        .operations__row
+          .operations__col
+            .operations__list
+              +the_svg('chevron').operations__list-bullet
+              | задает вопросы по теме вашей профессиональной деятельности;
+            .operations__list
+              +the_svg('chevron').operations__list-bullet
+              | просит сложить цифры;
+          .operations__col
+            .operations__list
+              +the_svg('chevron').operations__list-bullet
+              | прочитать предложения;
+            .operations__list
+              +the_svg('chevron').operations__list-bullet
+              | сказать, что на картинке.
+      .operations__item
+        img.operations__img(src=require('src/modules/operations/img/img_02.jpg') width=700 height=275)
+        .operations__header Интраоперационный мониторинг
+        .operations__list
+          +the_svg('chevron').operations__list-bullet
+          | Во время операции за вами непрерывно наблюдает физиолог.
+        .operations__list
+          +the_svg('chevron').operations__list-bullet
+          | С помощью специальных датчиков он отслеживает состояние вашей нервной системы и предотвращает ее повреждения.

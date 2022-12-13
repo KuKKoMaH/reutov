@@ -1,0 +1,127 @@
+.system {
+  $this: &;
+  margin: 95px 0 60px;
+
+  &__container {
+    position: relative;
+    border-radius: 15px;
+    background: #f4f7fa;
+    display: flex;
+    align-items: center;
+    padding: 42px 49px 51px;
+    overflow: hidden;
+    @include mobile() {
+      flex-direction: column;
+      padding: 25px 29px 29px;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      background: #e9eff4;
+      border-radius: 50%;
+      left: -122px;
+      top: -250px;
+    }
+  }
+
+  &__info {
+    max-width: 375px;
+    position: relative;
+  }
+
+  &__content {
+    position: relative;
+    margin-left: auto;
+    max-width: 535px;
+  }
+
+  &__text {
+    font-size: 20px;
+    @include mobile() {
+      font-size: 16px;
+    }
+
+    span {
+      color: $cyan;
+      font-weight: bold;
+    }
+  }
+
+  &__footer {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    @include media-max-width(1315px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__note {
+    font-weight: 300;
+    margin-right: 20px;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    @include mobile() {
+      font-size: 12px;
+      margin-bottom: 23px;
+    }
+  }
+
+  &__note-icon {
+    color: $red;
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+    margin-top: -7px;
+    flex-shrink: 0;
+    @include mobile() {
+      width: 18px;
+      height: 18px;
+      margin-top: -4px;
+    }
+  }
+
+  &__btn {
+    flex-shrink: 0;
+    @include mobile() {
+      width: 100%;
+    }
+  }
+
+  &__img {
+    flex: 1;
+    position: relative;
+    min-width: 243px;
+    margin: 0 20px;
+    @include mobile() {
+      margin: 23px 0;
+    }
+
+    &--01 {
+
+      img {
+      position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -203px;
+      }
+
+      @include mobile() {
+        display: none;
+      }
+    }
+
+    &--02 {
+      display: none;
+      @include mobile() {
+        display: block;
+      }
+    }
+  }
+}

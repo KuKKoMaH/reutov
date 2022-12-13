@@ -2,11 +2,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-weight: bold;
   line-height: 1;
   hyphens: auto;
-  @include ls-m();
-
-  span {
-    color: $green-dark;
-  }
 }
 
 h1, .h1 {
@@ -94,7 +89,6 @@ table {
     line-height: (15/13);
     @include ls();
     font-weight: 300;
-    background: $gray-light;
     height: 49px;
   }
 
@@ -126,9 +120,7 @@ table {
 }
 
 blockquote {
-  background: $green-dark;
   color: $white;
-  @include demi();
   @include ls();
   line-height: (26/18);
   padding: 33px 38px 33px;

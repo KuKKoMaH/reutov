@@ -1,20 +1,11 @@
-import 'jquery';
-import 'selectize';
 import noUiSlider from 'nouislider';
-import IMask      from 'imask';
-
-import './breakpoints';
-// import './initMap';
+import IMask from 'imask';
+import tippy from "tippy.js";
 import './initPopups';
-// import initGallery from "src/js/initGallery";
+import "src/js/initGallery";
 
-// const initGalleries = () => {
-//   $('.gallery').each(( i, el ) => {
-//     initGallery({ $items: $(el).find('.gallery__item') });
-//   });
-// };
-// initGalleries();
-// window.INIT_GALLERIES = initGalleries;
+
+tippy('.tooltip');
 
 // const $share = $('.share');
 // if ($share.length) {
@@ -39,14 +30,30 @@ document.querySelectorAll('input[type="tel"]').forEach(el => {
 
 // $('input[type="tel"]').mask("+7 (999) 999-99-99");
 
-$('.select').selectize();
+$('.select').selectize({
+  render: {
+    item:   function (data, escape) {
+      const field_label = this.settings.labelField;
+      let content = escape(data[field_label]);
+      if (data.color) content += `&nbsp;<span class="color" style="color: ${data.color}"></span>`;
+      return '<div class="item">' + content + '</div>';
+    },
+    option: function (data, escape) {
+      const field_label = this.settings.labelField;
+      const field_value = this.settings.valueField;
+      let content = escape(data[field_label]);
+      if (data.color) content += `<span class="color" style="color: ${data.color}"></span>`;
+      return '<div class="option ' + (data[field_value] === '' ? 'selectize-dropdown-emptyoptionlabel' : '') + '">' + content + '</div>';
+    },
+  },
+});
 
 $('.toTop').on('click', () => {
   $("html, body").animate({ scrollTop: 0 }, "slow");
 
 });
 
-$('.slider').each(( i, el ) => {
+$('.slider').each((i, el) => {
   const isInput = el.tagName === 'INPUT';
   let { value, min, max } = isInput ? el : el.dataset;
   value = JSON.parse(value);
@@ -72,7 +79,7 @@ $('.slider').each(( i, el ) => {
     step:    1,
   });
   if (isInput) {
-    $el.on('change', ( e ) => {
+    $el.on('change', (e) => {
       requestAnimationFrame(() => {
         const value = +slider.noUiSlider.get() + '';
         const newValue = e.target.value;
@@ -80,7 +87,7 @@ $('.slider').each(( i, el ) => {
         slider.noUiSlider.set(newValue);
       });
     });
-    slider.noUiSlider.on('update', function ( values, handle ) {
+    slider.noUiSlider.on('update', function (values, handle) {
       const value = +values[0] + '';
       if (el.value === value) return;
       el.value = value;
@@ -89,7 +96,7 @@ $('.slider').each(( i, el ) => {
   }
 });
 
-$('.file').each(( i, el ) => {
+$('.file').each((i, el) => {
   const $el = $(el);
   const $name = $el.find('.file__name');
   const originalText = $name.text();
@@ -99,8 +106,8 @@ $('.file').each(( i, el ) => {
   });
 });
 
-const updateCounterValue = ( e, change ) => {
-  const updateValue = ( v ) => {
+const updateCounterValue = (e, change) => {
+  const updateValue = (v) => {
     let value = +v;
     if (Number.isNaN(value)) value = 0;
     value += change;
@@ -118,5 +125,5 @@ const updateCounterValue = ( e, change ) => {
     valueEl.innerText = updateValue(valueEl.innerText);
   }
 };
-$('.counter__button--minus').on('click', ( e ) => updateCounterValue(e, -1));
-$('.counter__button--plus').on('click', ( e ) => updateCounterValue(e, 1));
+$('.counter__button--minus').on('click', (e) => updateCounterValue(e, -1));
+$('.counter__button--plus').on('click', (e) => updateCounterValue(e, 1));

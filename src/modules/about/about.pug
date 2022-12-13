@@ -1,25 +1,54 @@
 .about
-  .c.about__content
-    img.about__decor1(src=require('src/modules/about/img/decor1.png'))
-    img.about__decor2(src=require('src/modules/about/img/decor2.png'))
-    +the_svg('wavyline').about__separator.wavyline
-    .about__title О заводе кровли «Ваш Дом»
-    .about__subtitle Почему 92% наших клиентов пришли к нам по отзывам
-
-    .about__points
-      .about__decor3: img(src=require('src/img/logo.png'))
-      .about__items
-        .about__item.about__item--active
-          .about__main #[span 4500] м#[sup 2]
-          .about__text складских помещений
-        .about__item
-          .about__text более
-          .about__main #[span 15 ] лет
-          .about__text занимаемся кровлей
-        .about__item
-          .about__text свыше
-          .about__main #[span 50000]
-          .about__text домов с нашей кровлей
-        .about__item
-          .about__main #[span 15]
-          .about__text бригад монтажников
+  .c
+    .about__container
+      img.about__img(src=require('src/modules/about/img/img.jpg'))
+      .about__main
+        .about__title Меня зовут Андрей Реутов
+        .about__text Более 19 лет я спасаю и продлеваю жизни людям с тяжелыми заболеваниями головного и спинного мозга.
+        .about__bullets
+          .about__bullet
+            .about__bullet-head 96%
+            .about__bullet-text успешных#[br]операций#[br]в год
+          .about__bullet
+            .about__bullet-head 139
+            .about__bullet-text случаев#[br]длительной#[br]ремиссии
+          .about__bullet
+            .about__bullet-head 247
+            .about__bullet-text случаев#[br]полного#[br]выздоровления
+      .about__aside
+        .about__items
+          .about__item
+            img.about__item-img(src=require('src/modules/about/img/item_01.jpg'))
+            .about__item-text
+              | Работаю и провожу#[br]операции в Центральной#[br]клинической больнице
+              button.about__item-info.tooltip(data-tippy-content="hello"): +the_svg('question')
+          .about__item
+            img.about__item-img(src=require('src/modules/about/img/item_02.jpg'))
+            .about__item-text
+              | 7 лет учился и работал#[br]в институте нейрохирургии#[br]Бурденко
+              button.about__item-info.tooltip(data-tippy-content="hello"): +the_svg('question')
+          .about__item
+            img.about__item-img(src=require('src/modules/about/img/item_03.jpg'))
+            .about__item-text
+              | Участвовал в основании#[br]с нуля отделения#[br]нейрохирургии в ЦКБ
+          .about__item
+            img.about__item-img(src=require('src/modules/about/img/item_04.jpg'))
+            .about__item-text
+              | Выходец#[br]из семьи врачей#[br]в 3 поколениях
+              button.about__item-info: +the_svg('question')
+    .about__organisations-header Состою в сообществах:
+    .about__organizations
+      .about__organization
+        .about__organization-img: img(src=require('src/modules/about/img/org_01.png'))
+        .about__organization-title WFNS
+        .about__organization-text Всемирная Ассоциация Нейрохирургов
+      .about__organization
+        .about__organization-img: img(src=require('src/modules/about/img/org_02.png'))
+        .about__organization-title EANS
+        .about__organization-text Европейская Ассоциация Нейрохирургов
+      .about__organization
+        .about__organization-img: img(src=require('src/modules/about/img/org_03.png'))
+        .about__organization-title Российская ассоциация нейрохирургов1
+      .about__organization
+        .about__organization-img: img(src=require('src/modules/about/img/org_04.png'))
+        .about__organization-title Walter E. Dandy Neurosurgical Society

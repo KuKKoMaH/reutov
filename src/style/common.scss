@@ -1,16 +1,15 @@
 html {
-  font-family: 'Futura New', sans-serif;
+  font-family: 'Code Next', sans-serif;
   color: $black;
-  font-weight: 300;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 1.45;
   background: $white;
   overflow-x: hidden;
   overflow-wrap: break-word;
   scroll-behavior: smooth;
-  @include media('md') {
-    font-size: 16px;
-    line-height: 1.375;
+  @include mobile() {
+    font-size: 12px;
   }
 }
 
@@ -33,16 +32,14 @@ html, body {
 .c {
   margin-left: auto;
   margin-right: auto;
-  max-width: $container-lg;
+  max-width: 1440px;
   width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
   //@include media('lg') {
   //  max-width: $container-md;
   //}
-  @include media('md') {
-    padding-left: 20px;
-    padding-right: 20px;
+  @include mobile() {
     max-width: 500px;
   }
 }
@@ -81,9 +78,10 @@ img[data-srcset] {
 }
 
 .content {
-  h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-bottom: 1em;
   }
+
   > *:first-child {
     margin-top: 0;
   }
@@ -93,9 +91,8 @@ img[data-srcset] {
   }
 }
 
-.wavyline {
-  display: block;
-  color: $green;
-  width: 75px;
-  height: 14px;
+.page {
+  &--modal-active {
+    filter: blur(5px);
+  }
 }

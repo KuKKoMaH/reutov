@@ -1,0 +1,10 @@
+#thank-popup.popup.micromodal-slide(aria-hidden="true")
+  .popup__overlay(tabindex="-1" data-micromodal-close)
+    .popup__wrapper
+      button.popup__close(data-micromodal-close): +the_svg('cross')
+      .popup__container(role="dialog" aria-modal="true")
+        .thank
+          img.thank__img(src=require('src/modules/popup/img/img.png'))
+          .thank__icon: +the_svg('checked')
+          .thank__title Ваша заявка#[br]была отправлена
+          .thank__subtitle Мы свяжемся с вами в ближайшее время

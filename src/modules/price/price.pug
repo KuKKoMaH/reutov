@@ -1,0 +1,26 @@
+.price
+  .c
+    .price__title Стоимость операции зависит от вашей ситуации
+    .price__subtitle Она может составлять от NNN до NNN тысяч руб.#[br]#[b В цену операции уже входит все]
+    .price__items
+      .price__item
+        .price__icon: +the_svg('check')
+        .price__text сама операция#[br]и моя работа
+        img.price__img(src=require('src/modules/price/img/img_01.png'))
+
+      .price__item
+        .price__icon: +the_svg('check')
+        .price__text работа анестезиолога,#[br]физиолога и других врачей
+        img.price__img(src=require('src/modules/price/img/img_02.png'))
+
+      .price__item.price__item--wide
+        .price__icon: +the_svg('check')
+        .price__text реабилитация с#[br]проживанием и питанием
+        img.price__img(src=require('src/modules/price/img/img_03.png'))
+
+      .price__item.price__item--wide
+        .price__block
+          .price__block-text #[b Делаю операции по квотам.]#[br]Вы можете уточнить у меня, подходит ли ваша ситуация под квоту.
+
+    .price__button
+      button.btn Узнать цену операции

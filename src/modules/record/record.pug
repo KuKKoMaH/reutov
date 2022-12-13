@@ -1,0 +1,25 @@
+.record
+  .c
+    .record__container
+      .record__main
+        .record__title Запишитесь ко мне#[br]на встречу онлайн или в Москве
+        .record__subtitle Честно расскажу обо всех вариантах лечения и рисках,#[br]чтобы вы приняли взвешенное решение
+        .record__label Вы также узнаете:
+        .record__items
+          .record__item
+            .record__img: img(src=require('src/modules/record/img/img_01.png'))
+            .record__text сколько точно будет стоить#[br]операция вместе с реабилитацией
+          .record__item
+            .record__img: img(src=require('src/modules/record/img/img_02.png'))
+            .record__text потребуется ли вам#[br]дальнейшее лечение
+      .record__aside
+        .form
+          .form__header Оставьте свои данные
+          .form__subheader Я перезвоню в течение 1 дня
+          .form__input
+            .input: input(placeholder='Введите ваше имя')
+          .form__input
+            .input: input(placeholder='Введите ваш телефон' type="tel")
+          .form__button
+            button.btn Записаться на встречу с врачом
+          .form__note отправляя форму вы даете согласие#[br]#[a(href='#' ) на обработку данных]

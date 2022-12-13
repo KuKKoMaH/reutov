@@ -1,0 +1,41 @@
+.team-info
+  .team-info__close
+    button.team-info__close-btn(data-micromodal-close): +the_svg('cross')
+
+  .team-info__top
+    .team-info__title Отзывы об враче
+    .team-info__about
+      .team-info__info
+        .team-info__name Фамилия Имя Отчество
+        .team-info__position должность врача
+      img.team-info__photo(src=require('src/modules/team/img/img.jpg') width=70 height=70)
+
+  .team-info__slider
+    .team-info__slides
+      .team-info__slide
+        .team-info__card
+          .team-info__head
+            img.team-info__logo(src=require('src/modules/testimonials/img/img_01.png'))
+            .team-info__date 1 сентября 2021
+          .team-info__text Пост благодарности! Выражаю особую благодарность Реутову Андрею Александровичу за золотые руки, профессионализм, отзывчивость и ещё много-много слов благодарности. 15 августа 2022 была проведена операция по удалению вестибулярной шванномы, 25 августа 2022 уже дома и пишу пост. Медицина шагнула далеко вперёд и чем раньше выявлено заболевание, тем лучше! Будьте решительны и здоровы! Спасибо большое Реутову Андрею Александровичу и всему отделению нейрохирургии ЦКБ управления делами президента.
+          a.team-info__button(href='#' target="_blank") Читать отзывы на сайте ПроДокторов
+
+      .team-info__slide
+        .team-info__card
+          .team-info__head
+            img.team-info__logo(src=require('src/modules/testimonials/img/img_01.png'))
+            .team-info__date 1 сентября 2021
+          .team-info__text Обратилась к Андрею Александровичуиз-за дисфункции ВПШ и сирингомиелии. Нарастала неврологическая симптоматика, начались боли в спине. По итогу врач поставил шунт, в связи с этим сирингомиелия почти исчезла. Проведённым лечением очень довольна. Персонал ЦКБ замечательный, сама больница светлая, красивая. Такое ощущение, что находишься не в больнице, а на курорте.
+          a.team-info__button(href='#' target="_blank") Читать отзывы на сайте ПроДокторов
+
+      .team-info__slide
+        .team-info__card
+          .team-info__head
+            img.team-info__logo(src=require('src/modules/testimonials/img/img_01.png'))
+            .team-info__date 1 сентября 2021
+          .team-info__text Была проблема с головными болями при нагрузках. Дошло до того, что начались головные боли по ночам, головокружение. Подсказали обратиться к Андрею Александровичу. Сбросил ему снимки МРТ, после изучения назначил дату операции. Прошло 2 месяца после операции, чувствую себя хорошо, головные боли прошли. Стал спать нормально по ночам. Ещё раз спасибо!
+          a.team-info__button(href='#' target="_blank") Читать отзывы на сайте ПроДокторов
+
+  .team-info__footer
+    .team-info__nav.team-info__nav--prev: +the_svg('chevron')
+    .team-info__nav.team-info__nav--next: +the_svg('chevron')
