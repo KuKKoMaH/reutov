@@ -47,7 +47,7 @@
     background: rgba($blue, .75);
     display: flex;
     justify-content: center;
-    align-items: center;
+    //align-items: center;
     outline: 0;
     overflow: auto;
     //align-items: flex-start;
@@ -58,6 +58,7 @@
   &__wrapper {
     position: relative;
     max-width: 100%;
+    margin: auto 0;
   }
 
   &__container {
@@ -68,6 +69,7 @@
     padding: 40px 50px;
     overflow: hidden;
     position: relative;
+    margin-top: 48px;
     @include mobile() {
       padding: 27px 30px;
     }
@@ -111,7 +113,7 @@
   &__close {
     position: absolute;
     right: 0;
-    bottom: 100%;
+    top: 0;
     background: #f4f7fa;
     border-radius: 15px 15px 0 0;
     width: 48px;

@@ -55,6 +55,8 @@ $semi-desktop-breakpoint: 1320px;
     flex: 1;
     position: relative;
     min-width: 240px;
+    z-index: -1;
+    pointer-events: none;
 
     img {
       position: absolute;
