@@ -6,6 +6,7 @@ $semi-desktop-breakpoint: 1370px;
 
   overflow: hidden;
   position: relative;
+  padding-bottom: 49px;
 
   &:before {
     content: '';
@@ -99,7 +100,7 @@ $semi-desktop-breakpoint: 1370px;
     position: relative;
     display: flex;
     align-items: center;
-    padding: 0px 0 49px;
+    //padding: 0px 0 49px;
     flex-wrap: wrap;
     @include mobile() {
       flex-direction: column;
@@ -194,6 +195,7 @@ $semi-desktop-breakpoint: 1370px;
   }
 
   &__link {
+    display: inline-block;
     position: relative;
     margin-left: 37px;
     font-size: 12px;
@@ -245,5 +247,16 @@ $semi-desktop-breakpoint: 1370px;
       width: 141px;
       height: auto;
     }
+  }
+
+  &__left {
+    @include mobile() {
+      width: 100%;
+    }
+  }
+
+  &__address {
+    //text-align: center;
+    margin-top: 8px;
   }
 }

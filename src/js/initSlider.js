@@ -1,9 +1,9 @@
-import { Swiper, Navigation, Pagination, Lazy, Autoplay } from 'swiper';
-import Breakpoints                                        from 'breakpoints-js';
+import { Swiper, Navigation, Pagination, Lazy, Autoplay, HashNavigation } from 'swiper';
+import Breakpoints from 'breakpoints-js';
 
-Swiper.use([Navigation, Pagination, Lazy, Autoplay]);
+Swiper.use([Navigation, Pagination, Lazy, Autoplay, HashNavigation]);
 
-export default ( selector, props, initOptions ) => {
+export default (selector, props, initOptions) => {
   if (!initOptions) initOptions = {};
   initOptions = Object.assign({}, {
     sm: true,
@@ -14,7 +14,7 @@ export default ( selector, props, initOptions ) => {
   const $wrapper = $(selector);
   let lastSlider = null;
   if ($wrapper.length) {
-    $wrapper.each(( i, el ) => {
+    $wrapper.each((i, el) => {
       let slider = null;
       const $el = $(el);
 

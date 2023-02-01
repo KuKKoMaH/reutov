@@ -103,6 +103,7 @@ $semi-desktop-breakpoint: 1370px;
   }
 
   &__link {
+    display: inline-block;
     position: relative;
     margin-left: 37px;
     font-size: 12px;
